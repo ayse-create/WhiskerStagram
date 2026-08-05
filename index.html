@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Whiskerstagram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="backdrop">
+  <div class="backdrop-blob blob-1"></div>
+  <div class="backdrop-blob blob-2"></div>
+  <div class="backdrop-paws" aria-hidden="true">🐾</div>
+</div>
+
+<div class="stage">
+
+  <div class="brandmark">
+    <span class="brandmark-icon">🐱</span>
+    <span class="brandmark-text">Whisker<span>stagram</span></span>
+  </div>
+
+  <!-- TELEFON ÇERÇEVESİ (yatay tutulmuş gibi) -->
+  <div class="phone" id="phone">
+    <div class="phone-notch">
+      <span class="phone-cam"></span>
+      <span class="phone-speaker"></span>
+    </div>
+
+    <div class="phone-screen" id="phone-screen">
+
+      <!-- 0. HOŞGELDİN -->
+      <section class="screen active" id="screen-welcome" data-screen="welcome">
+        <div class="welcome-wrap">
+          <div class="welcome-icon">🐾</div>
+          <h1>Whiskerstagram'a<br>Hoş Geldin</h1>
+          <p class="muted">Kendi patili içerik hesabını kur, canlı yayın yap, içerik üret ve takipçi topla. Hazır mısın yıldızım?</p>
+          <button class="btn btn-primary btn-big" id="btn-start-onboarding">Hesap Oluştur</button>
+        </div>
+      </section>
+
+      <!-- 1. HESAP OLUŞTURMA -->
+      <section class="screen" id="screen-onboarding" data-screen="onboarding">
+        <div class="onboarding-wrap">
+          <h2>Profilini Oluştur</h2>
+          <p class="muted small">Takipçilerin seni böyle tanıyacak.</p>
+
+          <div class="avatar-picker">
+            <input type="file" id="avatar-input" accept="image/*" hidden>
+            <label for="avatar-input" class="avatar-circle" id="avatar-preview">
+              <span class="avatar-placeholder">📷</span>
+            </label>
+            <span class="avatar-hint">Fotoğraf seç</span>
+          </div>
+
+          <div class="field">
+            <label for="username-input">Kullanıcı adı</label>
+            <div class="input-with-prefix">
+              <span>@</span>
+              <input type="text" id="username-input" placeholder="patilikedi" maxlength="20">
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-big" id="btn-confirm-onboarding" disabled>Devam Et</button>
+        </div>
+      </section>
+
+      <!-- 2. BÖLÜM ARA GEÇİŞİ -->
+      <section class="screen" id="screen-chapter-intro" data-screen="chapter-intro">
+        <div class="chapter-wrap">
+          <div class="chapter-eyebrow" id="chapter-eyebrow">BÖLÜM 1 / 3</div>
+          <h2 id="chapter-title">Canlı Yemek Yayını</h2>
+          <p class="muted" id="chapter-desc">Takipçilerin için canlıya geç ve kedilerin seveceği bir tarif hazırla.</p>
+          <button class="btn btn-primary btn-big" id="btn-chapter-start">Yayına Başla</button>
+        </div>
+      </section>
+
+      <!-- 3. BÖLÜM 1: CANLI YEMEK YAYINI -->
+      <section class="screen" id="screen-game1" data-screen="game1"></section>
+
+      <!-- 4. BÖLÜM 2: KEDİ ÇİZİMİ -->
+      <section class="screen" id="screen-game2" data-screen="game2"></section>
+
+      <!-- 5. BÖLÜM 3: REELS EDİTÖRÜ -->
+      <section class="screen" id="screen-game3" data-screen="game3"></section>
+
+      <!-- 6. LIKE SONUÇ EKRANI (bölüm sonu) -->
+      <section class="screen" id="screen-result" data-screen="result">
+        <div class="result-wrap">
+          <div class="result-cat" id="result-cat-emoji">😻</div>
+          <div class="result-reaction" id="result-reaction-text">Çok beğendi!</div>
+          <div class="like-counter">
+            <span class="like-heart">❤️</span>
+            <span id="result-like-number">+0</span>
+            <span class="like-label">Like</span>
+          </div>
+          <button class="btn btn-primary btn-big" id="btn-result-continue">Devam Et</button>
+        </div>
+      </section>
+
+      <!-- 7. PROFİL / SONUÇ -->
+      <section class="screen" id="screen-profile" data-screen="profile"></section>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/app.js"></script>
+<script src="js/game1-live.js"></script>
+<script src="js/game2-draw.js"></script>
+<script src="js/game3-reels.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>
